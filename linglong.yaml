@@ -1,0 +1,28 @@
+package:
+  id: kconfig
+  name: kconfig
+  version: 5.54.0
+  kind: lib
+  discription: |
+    kconfig
+
+base:
+  id: org.deepin.base
+  version: 20.5.0
+
+#pkg-kde-tools gettext graphviz 
+depends:
+- id: qtbase
+  version: 5.11.3.15
+- id: qttools
+  version: 5.11.3
+
+source:
+  kind: git
+  url: https://github.com/deepin-community/kconfig.git
+  version: uos
+  commit: 9e7307a745035d7987ca3bc6988e28df24a78511
+  patch:
+  - Allow-packagers-set-kconfig_compiler-install-dir.patch
+build:
+  kind: cmake
